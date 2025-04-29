@@ -17,6 +17,7 @@ namespace Engine
             var width = BitConverter.GetBytes((short) windowWidth);
             var height = BitConverter.GetBytes((short) windowHeight);
             byte[] header = {0,  0,  2,  0, 0, 0, 0, 0,  0, 0,  0, 0,  width[0], width[1], height[0], height[1], 24, 0b00001000};
+            //byte[] header = {0,  0,  2,  0, 0, 0, 0, 0,  0, 0,  0, 0,  width[0], width[1], height[0], height[1], 24, 0010}; // C# 5.0+ tested
 
             using (var fs = File.OpenWrite(filename))
             {
